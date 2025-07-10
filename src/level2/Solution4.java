@@ -1,14 +1,24 @@
 package level2;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
-public class Solution4 {
-    public static void main(String[] args) {
+class Solution4 {
+    public String solution(String s) {
+        String answer = "";
+        StringBuilder stringBuilder = new StringBuilder();
+        List<Character> list = new ArrayList<>();
+        for(int i=0;i<s.length();i++){
+            list.add(s.charAt(i));
+        }
+        list = list.stream().sorted(Collections.reverseOrder()).collect(Collectors.toList());
 
+        for(char c : list){
+            stringBuilder.append(c);
+        }
+
+        answer = stringBuilder.toString();
+
+        return answer;
     }
-
 }
