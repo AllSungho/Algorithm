@@ -21,4 +21,14 @@ class Solution4 {
 
         return answer;
     }
+    public String solution2(String s){
+        String answer = "";
+        List<Character> list = new ArrayList<>();
+        for(int i=0;i<s.length();i++){
+            list.add(s.charAt(i));
+        }
+        answer = list.stream().sorted(Collections.reverseOrder()).map(ch -> ch.toString()).collect(Collectors.joining());
+
+        return answer;
+    }
 }
