@@ -10,7 +10,7 @@ public class Solution4 {
     }
     public static int solution(int[][] sizes) {
         int answer = 0;
-        
+
         System.out.println();
         return answer;
     }
