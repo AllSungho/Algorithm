@@ -1,6 +1,6 @@
 package level3;
 
-import java.util.Arrays;
+import java.util.*;
 
 public class Solution4 {
     public static void main(String[] args) {
@@ -10,8 +10,16 @@ public class Solution4 {
     }
     public static int solution(int[][] sizes) {
         int answer = 0;
-
-        System.out.println();
+        List<Integer> list = new ArrayList<>();
+        for(int i=0;i<sizes.length;i++){
+            list.add(Arrays.stream(sizes[i]).max().getAsInt());
+        }
+        answer = list.stream().mapToInt(num -> num).max().getAsInt();
+        list.clear();
+        for(int i=0;i<sizes.length;i++){
+            list.add(Arrays.stream(sizes[i]).min().getAsInt());
+        }
+        answer *= list.stream().mapToInt(num -> num).max().getAsInt();
         return answer;
     }
 }
